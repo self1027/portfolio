@@ -34,6 +34,15 @@
         }
     </style>
 
+    <!-- Switch de Idioma -->
+    <div class="language-switch">
+        <label class="switch">
+            <input type="checkbox" id="language-toggle">
+            <span class="slider round"></span>
+        </label>
+        <span id="language-label">PT-BR</span>
+    </div>
+
     <!-- Painel Fixo à Esquerda -->
     <div class="left-panel"> 
         <div class="profile">
@@ -53,39 +62,39 @@
             </nav>
             <!-- Ícones de Contato e Currículo -->
             <div class="contatos">
-                <a href="./media/curriculo.pdf" target="_blank" title="Ver Currículo">
-                    <i class="fas fa-file-pdf">
-                    <span> Currículo</span></i>
+                <a href="./media/curriculo.pdf" target="_blank" title="curriculo">
+                    <i class="fas fa-file-pdf"></i>
+                    <span> Currículo</span>
                 </a>
-                <a href="mailto:diasmurilo02@gmail.com" target="_blank" title="Enviar Email">
-                    <i class="fas fa-envelope">
-                    <span> E-Mail</span></i>
+                <a href="mailto:diasmurilo02@gmail.com" target="_blank" title="email">
+                    <i class="fas fa-envelope"></i>
+                    <span> E-Mail</span>
                 </a>
-                <a href="https://www.linkedin.com/in/murilo-dias-chossani-640ba0320/" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin">
-                    <span> LinkedIn</span></i>
+                <a href="https://www.linkedin.com/in/murilo-dias-chossani-640ba0320/" target="_blank" title="linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    <span> LinkedIn</span>
                 </a>
-                <a href="https://github.com/self1027" target="_blank" title="GitHub">
-                    <i class="fab fa-github">
-                    <span> GitHub</span></i>
+                <a href="https://github.com/self1027" target="_blank" title="github">
+                    <i class="fab fa-github"></i>
+                    <span> GitHub</span>
                 </a>
             </div>
         </div>
         <!-- Imagens decorativas -->
-        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-1" >
-        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-2" >
-        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-3" >
-        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-4" >
-        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-5" >
+        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-1">
+        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-2">
+        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-3">
+        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-4">
+        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-5">
     </div>
 
     <!-- Seção Rolável à Direita -->
-    <div class="right-panel" style="z-index: 1;"> <!-- Adicionando z-index aqui -->
+    <div class="right-panel" style="z-index: 1;">
         <!-- Imagens decorativas na parte móvel -->
-        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-6" >
-        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-7" >
-        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-8" >
-        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-9" >
+        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-6">
+        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-7">
+        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-8">
+        <img src="media/neon_circle_shape.png" alt="Neon Circle" class="decorative-image circle-9">
 
         <!-- Seção Sobre Mim -->
         <section id="sobre">
@@ -142,7 +151,7 @@
             <div class="projeto">
                 <h3>API FixHub</h3>
                 <p>
-                    A API FixHub foi desenvolvida para facilitar o gerenciamento de manutenções em condomínios e edifícios residenciais. Ela permite que síndicos e moradores façam solicitações de reparos de forma simples e organizada, garantindo que responsáveis técnicos possam visualizar, acompanhar e concluir essas demandas com eficiência. O sistema possibilita o controle detalhado de cada solicitação, desde o registro até a conclusão, proporcionando transparência e melhor comunicação entre os envolvidos.
+                    A API FixHub foi desenvolvida para facilitar o gerenciamento de manutenções em condomínios e edifícios residenciais. Ela permite que síndicos e moradores façam solicitações de reparos de forma simples e organizada, garantindo que responsáveis técnicos possam visualizar, acompanhar e concluir essas demandas com eficiência.
                 </p>
                 <div class="ferramentas">
                     <div class="ferramenta">
@@ -167,7 +176,7 @@
             <div class="projeto">
                 <h3>Menu de Pizzaria</h3>
                 <p>
-                    O Menu de Pizzaria é um sistema online que exibe um catálogo interativo de pizzas, aperitivos e acréscimos, além de permitir que os clientes compartilhem suas opiniões sobre os produtos. Com um design intuitivo e fácil de navegar, o objetivo do sistema é proporcionar uma experiência agradável para os clientes ao explorar o cardápio e conhecer melhor as opções disponíveis.
+                    O Menu de Pizzaria é um sistema online que exibe um catálogo interativo de pizzas, aperitivos e acréscimos, além de permitir que os clientes compartilhem suas opiniões sobre os produtos.
                 </p>
                 <div class="ferramentas">
                     <div class="ferramenta">
@@ -195,17 +204,7 @@
         </section>
     </div>
 
-    <!-- Script para Navegação Suave -->
+    <!-- Scripts -->
     <script src="script.js"></script>
-    <script>
-        // Script para atualizar o gradiente com base na posição do mouse
-        const gradient = document.querySelector('.gradient');
-
-        document.addEventListener('mousemove', (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
-            gradient.style.background = `radial-gradient(600px at ${x}px ${y}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
-        });
-    </script>
 </body>
 </html>

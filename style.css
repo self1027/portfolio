@@ -93,7 +93,6 @@ body {
     gap: 15px;
 }
 
-  
 .contatos a {
     display: inline-flex; /* Ajusta para o conteúdo ocupar apenas o tamanho do ícone e texto */
     align-items: center; /* Alinha ícone e texto verticalmente */
@@ -333,4 +332,66 @@ section p {
     background-color: #1f4068; /* Azul médio */
     padding: 8px 12px;
     border-radius: 20px; /* Bordas arredondadas */
+}
+
+/* Estilo do Switch de Idioma */
+.language-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #64ffda; /* Verde água */
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #0a192f; /* Azul escuro */
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #1f4068; /* Azul médio */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+#language-label {
+    font-size: 1rem;
+    color: #ccd6f6; /* Texto principal */
+    font-weight: 500;
 }

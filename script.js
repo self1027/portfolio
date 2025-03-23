@@ -85,9 +85,7 @@ const translations = {
         "role": "Desenvolvedor Backend",
         "description": "Apaixonado por tecnologia e inovação, com foco em criar soluções eficientes e escaláveis. Sempre em busca de novos desafios e aprendizado contínuo.",
         "about": "Sobre Mim",
-        "aboutText1": "Sou um desenvolvedor Backend, com experiência sólida em Node.js, Express, MongoDB, Java, Android e Cloud Run. Minha jornada no desenvolvimento de software é movida pela busca constante por aprendizado e aprimoramento, sempre focado em criar soluções eficientes, escaláveis e de alto desempenho.",
-        "aboutText2": "Atualmente, estou em busca da minha primeira oportunidade profissional, e acredito que minha dedicação, habilidades técnicas e capacidade de adaptação podem agregar valor à sua equipe.",
-        "skills": "Habilidades Técnicas",
+        "aboutText1": "Sou um desenvolvedor Backend, com experiência sólida em Node.js, Express, Bancos SQL e NOSQL, Cloud Run e AWS. Minha jornada no desenvolvimento de software é movida pela busca constante por aprendizado e aprimoramento, sempre focado em criar soluções eficientes, escaláveis e de alto desempenho.",
         "projects": "Projetos",
         "apiFixHub": "API FixHub",
         "apiFixHubDescription": "A API FixHub foi desenvolvida para facilitar o gerenciamento de manutenções em condomínios e edifícios residenciais. Ela permite que síndicos e moradores façam solicitações de reparos de forma simples e organizada, garantindo que responsáveis técnicos possam visualizar, acompanhar e concluir essas demandas com eficiência.",
@@ -118,8 +116,7 @@ const translations = {
         "role": "Backend Developer",
         "description": "Passionate about technology and innovation, focused on creating efficient and scalable solutions. Always seeking new challenges and continuous learning.",
         "about": "About Me",
-        "aboutText1": "I am a Backend Developer with solid experience in Node.js, Express, MongoDB, Java, Android, and Cloud Run. My journey in software development is driven by a constant pursuit of learning and improvement, always focused on creating efficient, scalable, and high-performance solutions.",
-        "aboutText2": "Currently, I am seeking my first professional opportunity, and I believe that my dedication, technical skills, and adaptability can add value to your team.",
+        "aboutText1": "I am a Backend Developer with solid experience in Node.js, Express, SQL and NOSQL Databases, Cloud Run and AWS. My journey in software development is driven by a constant pursuit of learning and improvement, always focused on creating efficient, scalable, and high-performance solutions.",
         "skills": "Technical Skills",
         "projects": "Projects",
         "apiFixHub": "API FixHub",
@@ -156,7 +153,6 @@ function updateLanguage(lang) {
     document.querySelector(".descricao p").textContent = translations[lang].description;
     document.querySelector("#sobre h2").textContent = translations[lang].about;
     document.querySelector("#sobre p").textContent = translations[lang].aboutText1;
-    document.querySelector("#sobre p + p").textContent = translations[lang].aboutText2;
     document.querySelector("#habilidades h2").textContent = translations[lang].skills;
     document.querySelector("#projetos h2").textContent = translations[lang].projects;
     document.querySelector("#projetos .projeto h3").textContent = translations[lang].apiFixHub;

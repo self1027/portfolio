@@ -86,6 +86,7 @@ const translations = {
         "description": "Apaixonado por tecnologia e inovação, com foco em criar soluções eficientes e escaláveis. Sempre em busca de novos desafios e aprendizado contínuo.",
         "about": "Sobre Mim",
         "aboutText1": "Sou um desenvolvedor Backend, com experiência sólida em Node.js, Express, Bancos SQL e NOSQL, Cloud Run e AWS. Minha jornada no desenvolvimento de software é movida pela busca constante por aprendizado e aprimoramento, sempre focado em criar soluções eficientes, escaláveis e de alto desempenho.",
+        "skills": "Habilidades Técnicas",
         "projects": "Projetos",
         "apiFixHub": "API FixHub",
         "apiFixHubDescription": "A API FixHub foi desenvolvida para facilitar o gerenciamento de manutenções em condomínios e edifícios residenciais. Ela permite que síndicos e moradores façam solicitações de reparos de forma simples e organizada, garantindo que responsáveis técnicos possam visualizar, acompanhar e concluir essas demandas com eficiência.",

@@ -81,7 +81,7 @@ document.addEventListener('mousemove', (e) => {
 // Traduções
 const translations = {
     "pt-BR": {
-        "title": "Portfólio de Murilo D.",
+        "title": "Murilo D.",
         "role": "Desenvolvedor Backend",
         "description": "Apaixonado por tecnologia e inovação, com foco em criar soluções eficientes e escaláveis. Sempre em busca de novos desafios e aprendizado contínuo.",
         "about": "Sobre Mim",
@@ -110,10 +110,15 @@ const translations = {
         "fonts": "FontAwesome, Google Fonts",
         "git": "Git, GitHub",
         "postman": "Postman para testes de API",
-        "vscode": "Visual Studio Code"
+        "vscode": "Visual Studio Code",
+        "livro": "Livro de Fiscalizações - Vigilância Sanitária",
+        "livroDescricao": "Aplicação web desenvolvida para informatizar o registro de denúncias, inspeções e ações técnicas da Vigilância Sanitária. Substitui o antigo processo manual, oferecendo um sistema moderno de cadastro, busca e emissão de relatórios com segurança e agilidade.",
+        "picpic": "PicPic - Editor de Imagens com Filtros",
+        "picpicDescricao": "O PicPic é uma aplicação web que permite aplicar filtros em imagens diretamente no navegador. É possível utilizar filtros passa-baixa (como média, mediana e moda) e filtros passa-alta (como Sobel e Laplaciano), com suporte a múltiplas camadas de processamento sobre a mesma imagem.",
+
     },
     "en-US": {
-        "title": "Murilo D.'s Portfolio",
+        "title": "Murilo D.",
         "role": "Backend Developer",
         "description": "Passionate about technology and innovation, focused on creating efficient and scalable solutions. Always seeking new challenges and continuous learning.",
         "about": "About Me",
@@ -142,7 +147,12 @@ const translations = {
         "fonts": "FontAwesome, Google Fonts",
         "git": "Git, GitHub",
         "postman": "Postman for API testing",
-        "vscode": "Visual Studio Code"
+        "vscode": "Visual Studio Code",
+        "livro": "Inspection Log - Health Surveillance",
+        "livroDescricao": "Web application developed to digitize the recording of complaints, inspections, and technical actions for the Health Surveillance service. Replaces the manual process with a modern system for registration, search, and report generation with security and agility.",
+        "picpic": "PicPic - Image Editor with Filters",
+        "picpicDescricao": "PicPic is a web application that allows applying filters to images directly in the browser. It supports low-pass filters (like mean, median, and mode) and high-pass filters (such as Sobel and Laplacian), with multi-layer processing support.",
+
     }
 };
 
@@ -156,12 +166,16 @@ function updateLanguage(lang) {
     document.querySelector("#sobre p").textContent = translations[lang].aboutText1;
     document.querySelector("#habilidades h2").textContent = translations[lang].skills;
     document.querySelector("#projetos h2").textContent = translations[lang].projects;
-    document.querySelector("#projetos .projeto h3").textContent = translations[lang].apiFixHub;
-    document.querySelector("#projetos .projeto p").textContent = translations[lang].apiFixHubDescription;
-    document.querySelector("#projetos .projeto + .projeto h3").textContent = translations[lang].pizzaMenu;
-    document.querySelector("#projetos .projeto + .projeto p").textContent = translations[lang].pizzaMenuDescription;
+    const projetos = document.querySelectorAll("#projetos .projeto");
 
-    // Atualiza os textos dos links
+    if (projetos.length >= 2) {
+        projetos[0].querySelector("h3").textContent = translations[lang].livro;
+        projetos[0].querySelector("p").textContent = translations[lang].livroDescricao;
+
+        projetos[1].querySelector("h3").textContent = translations[lang].picpic;
+        projetos[1].querySelector("p").textContent = translations[lang].picpicDescricao;
+    }
+
     // Atualiza os textos dos links
     document.querySelectorAll('.links-projeto a').forEach((link, index) => {
         if (link.classList.contains('link-online')) {

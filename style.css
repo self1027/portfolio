@@ -395,3 +395,152 @@ input:checked + .slider:before {
     color: #ccd6f6; /* Texto principal */
     font-weight: 500;
 }
+
+/* Adicione estas regras ao seu arquivo CSS */
+
+/* Melhorias gerais de alinhamento */
+body {
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+.left-panel {
+    padding: 60px 40px; /* Aumente o padding para melhor espaçamento */
+    width: 30%; /* Reduza um pouco a largura */
+    justify-content: center; /* Centralize o conteúdo verticalmente */
+}
+
+.right-panel {
+    width: 70%; /* Ajuste para a nova largura do painel esquerdo */
+    margin-left: 30%; /* Correspondente ao ajuste acima */
+    padding: 60px 80px; /* Mais espaço interno */
+}
+
+/* Melhor hierarquia visual para títulos */
+.profile h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: #64ffda;
+    border-radius: 3px;
+}
+
+/* Melhor espaçamento entre seções */
+section {
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+}
+
+/* Cards de projetos mais destacados */
+.projeto {
+    background-color: rgba(17, 34, 64, 0.5); /* Fundo semi-transparente */
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(5px); /* Efeito de vidro fosco */
+}
+
+.projeto h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+/* Melhor organização das ferramentas */
+.ferramentas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.ferramenta {
+    padding: 10px 15px;
+    font-size: 0.85rem;
+}
+
+/* Links mais destacados */
+.links-projeto a {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.links-projeto a:first-child {
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+.links-projeto a:first-child:hover {
+    background-color: rgba(100, 255, 218, 0.2);
+}
+
+.link-online {
+    background-color: rgba(31, 64, 104, 0.8);
+}
+
+.link-online:hover {
+    background-color: rgba(31, 64, 104, 1);
+}
+
+/* Melhor contraste para texto */
+section p {
+    color: #a8b2d1;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* Efeito mais suave para os círculos decorativos */
+.decorative-image {
+    opacity: 0.15;
+    filter: blur(1px);
+    transition: all 0.5s ease;
+}
+
+/* Efeito hover mais sutil nos links de navegação */
+.profile nav ul li a {
+    transition: all 0.2s ease;
+}
+
+.profile nav ul li a:hover {
+    transform: translateX(5px) translateY(-2px);
+}
+
+/* Responsividade básica */
+@media (max-width: 1200px) {
+    .left-panel, .right-panel {
+        width: 100%;
+        margin-left: 0;
+        position: static;
+        height: auto;
+    }
+    
+    .left-panel {
+        padding: 40px 20px;
+        text-align: center;
+    }
+    
+    .right-panel {
+        padding: 40px;
+    }
+    
+    body {
+        flex-direction: column;
+        overflow-y: auto;
+        height: auto;
+    }
+}

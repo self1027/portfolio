@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
@@ -212,6 +216,7 @@ body {
     padding: 40px;
     position: relative; /* Para posicionar os círculos */
     z-index: 1; /* Garante que fique acima do gradiente */
+    scroll-behavior: smooth;
 }
 
 /* Divisor entre seções */

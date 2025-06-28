@@ -1,77 +1,77 @@
-document.querySelectorAll('.left-panel a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault(); // Evita o comportamento padrão do link
-        const targetId = this.getAttribute('href').substring(1); // Remove o "#"
-        const targetSection = document.getElementById(targetId);
-
-        // Rola suavemente até a seção
-        targetSection.scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-    
-});
 // Seleciona os elementos
 const leftPanel = document.querySelector('.left-panel');
 const rightPanel = document.querySelector('.right-panel');
 
-// Variável para controlar o estado do scroll
-let isScrolling = false;
+// Configuração do scroll suave
+function smoothScrollTo(target) {
+    const targetPosition = target.getBoundingClientRect().top + rightPanel.scrollTop;
+    const startPosition = rightPanel.scrollTop;
+    const distance = targetPosition - startPosition;
+    const duration = 800; // Duração em milissegundos
+    let startTime = null;
 
-// Adiciona um listener para o evento de scroll no painel fixo
-leftPanel.addEventListener('wheel', (event) => {
-    // Previne o comportamento padrão de scroll
-    event.preventDefault();
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+        rightPanel.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
 
-    // Evita múltiplos eventos de scroll simultâneos
-    if (isScrolling) return;
+    function easeInOutQuad(t, b, c, d) {
+        t /= d/2;
+        if (t < 1) return c/2*t*t + b;
+        t--;
+        return -c/2 * (t*(t-2) - 1) + b;
+    }
 
-    // Marca que o scroll está ocorrendo
-    isScrolling = true;
+    requestAnimationFrame(animation);
+}
 
-    // Aplica o scroll na seção rolável
-    rightPanel.scrollBy({
-        top: event.deltaY, // Usa a direção do scroll
-    });
-
-    // Reseta o estado do scroll após um pequeno delay
-    setTimeout(() => {
-        isScrolling = false;
-    }); // Ajuste o delay conforme necessário
-});
-
-document.querySelector('.contatos a[href*="curriculo.pdf"]').addEventListener('click', function(event) {
-    event.preventDefault(); // Previne o comportamento padrão
-    window.open(this.href, '_blank'); // Abre o PDF em uma nova aba
-});
-
-// Script para garantir que os links na parte fixa abram em uma nova aba
-const links = document.querySelectorAll('.contatos a[target="_blank"]');
-
-links.forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault(); // Previne o comportamento padrão do link
-        window.open(this.href, '_blank'); // Abre o link em uma nova aba
-    });
-});
-
-// Script para navegação suave (se já existir, mantenha)
+// Configura o scroll suave para os links de navegação
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-        e.preventDefault(); // Evita o comportamento padrão do link
-        const targetId = this.getAttribute('href').substring(1); // Remove o "#"
-        const targetSection = document.getElementById(targetId);
-
-        // Rola suavemente até a seção
-        targetSection.scrollIntoView({
-            behavior: 'smooth'
-        });
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            smoothScrollTo(targetSection);
+        }
     });
 });
 
-// Script para atualizar o gradiente com base na posição do mouse
-const gradient = document.querySelector('.gradient');
+// Configura o scroll do mouse no painel esquerdo
+let isScrolling = false;
+leftPanel.addEventListener('wheel', (event) => {
+    event.preventDefault();
+    
+    if (isScrolling) return;
+    isScrolling = true;
 
+    rightPanel.scrollBy({
+        top: event.deltaY,
+        behavior: 'smooth'
+    });
+
+    setTimeout(() => {
+        isScrolling = false;
+    }, 100);
+});
+
+// Configuração dos links de contato
+document.querySelectorAll('.contatos a').forEach(link => {
+    const href = link.getAttribute('href');
+    const isExternal = href.startsWith('http') || href.startsWith('mailto:');
+    
+    if (isExternal) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+    }
+});
+
+// Configuração do gradiente
+const gradient = document.querySelector('.gradient');
 document.addEventListener('mousemove', (e) => {
     const x = e.clientX;
     const y = e.clientY;
@@ -191,7 +191,7 @@ function updateLanguage(lang) {
         spans[0].textContent = translations[lang][link.title.toLowerCase()];
 
         if (link.title.toLowerCase() === "curriculo") {
-            link.href = lang === "pt-BR" ? "./media/curriculo.pdf" : "./media/resume.pdf";
+            link.href = lang === "pt-BR" ? "./media/curriculo-MuriloD.pdf" : "./media/resume.pdf";
         }
     });
 

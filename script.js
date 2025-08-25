@@ -95,7 +95,10 @@ const translations = {
         fonts: "FontAwesome, Google Fonts",
         git: "Git, GitHub",
         postman: "Postman para testes de API",
-        vscode: "Visual Studio Code"
+        vscode: "Visual Studio Code",
+        devops: "DevOps (CI/CD, Docker, Cloud Deploy)",
+        oop: "Orientação a Objetos (OOP)",
+        cleanCode: "Clean Code e boas práticas"
     },
     "en-US": {
         title: "Murilo D.",
@@ -127,21 +130,30 @@ const translations = {
         fonts: "FontAwesome, Google Fonts",
         git: "Git, GitHub",
         postman: "Postman for API testing",
-        vscode: "Visual Studio Code"
+        vscode: "Visual Studio Code",
+        devops: "DevOps (CI/CD, Docker, Cloud Deploy)",
+        oop: "Object-Oriented Programming (OOP)",
+        cleanCode: "Clean Code and best practices"
     }
 };
 
 // Função para atualizar idioma
 function updateLanguage(lang) {
+    // Título e perfil
     document.title = translations[lang].title;
     document.querySelector(".profile h1").textContent = translations[lang].title;
     document.querySelector(".profile p").textContent = translations[lang].role;
     document.querySelector(".descricao p").textContent = translations[lang].description;
+
+    // Seção Sobre
     document.querySelector("#sobre h2").textContent = translations[lang].about;
     document.querySelector("#sobre p").textContent = translations[lang].aboutText1;
-    document.querySelector("#habilidades h2").textContent = translations[lang].skills;
-    document.querySelector("#projetos h2").textContent = translations[lang].projects;
 
+    // Seção Habilidades
+    document.querySelector("#habilidades h2").textContent = translations[lang].skills;
+
+    // Seção Projetos
+    document.querySelector("#projetos h2").textContent = translations[lang].projects;
     const projetos = document.querySelectorAll("#projetos .projeto");
     if (projetos.length >= 2) {
         projetos[0].querySelector("h3").textContent = translations[lang].livro;
@@ -168,33 +180,40 @@ function updateLanguage(lang) {
         }
     });
 
-    // Habilidades
-    const h3s = document.querySelectorAll('#habilidades .habilidade h3');
-    h3s[0].textContent = translations[lang].backend;
-    h3s[1].textContent = translations[lang].frontend;
-    h3s[2].textContent = translations[lang].tools;
+    const artigos = document.querySelectorAll('#habilidades .habilidade');
+    artigos[0].querySelector('h3').textContent = translations[lang].backend;
+    artigos[1].querySelector('h3').textContent = translations[lang].frontend;
+    artigos[2].querySelector('h3').textContent = translations[lang].tools;
 
-    const lis = document.querySelectorAll('#habilidades .habilidade ul li');
-    lis[0].innerHTML = `<i class="fas fa-code"></i> ${translations[lang].nodejs}`;
-    lis[1].innerHTML = `<i class="fas fa-database"></i> ${translations[lang].postgresql}`;
-    lis[2].innerHTML = `<i class="fas fa-cloud"></i> ${translations[lang].cloud}`;
-    lis[3].innerHTML = `<i class="fas fa-cogs"></i> ${translations[lang].rest}`;
-    lis[4].innerHTML = `<i class="fas fa-project-diagram"></i> ${translations[lang].architecture}`;
-    lis[5].innerHTML = `<i class="fab fa-linux"></i> Linux`;
-    lis[6].innerHTML = `<i class="fas fa-dharmachakra"></i> DevOps (CI/CD, Docker, Cloud Deploy)`;
-    lis[7].innerHTML = `<i class="fas fa-cube"></i> Orientação a Objetos (OOP)`;
-    lis[8].innerHTML = `<i class="fas fa-check-double"></i> Clean Code e boas práticas`;
-    lis[9].innerHTML = `<i class="fab fa-html5"></i> ${translations[lang].html}`;
-    lis[10].innerHTML = `<i class="fas fa-paint-brush"></i> ${translations[lang].fonts}`;
-    lis[11].innerHTML = `<i class="fab fa-git"></i> ${translations[lang].git}`;
-    lis[12].innerHTML = `<i class="fas fa-vials"></i> ${translations[lang].postman}`;
-    lis[13].innerHTML = `<i class="fas fa-code"></i> ${translations[lang].vscode}`;
+
+    // Atualiza seções de habilidades separadamente
+    const backendLis = document.querySelectorAll('#habilidades .habilidade:nth-child(1) ul li');
+    backendLis[0].innerHTML = `<i class="fas fa-code"></i> ${translations[lang].nodejs}`;
+    backendLis[1].innerHTML = `<i class="fas fa-database"></i> ${translations[lang].postgresql}`;
+    backendLis[2].innerHTML = `<i class="fas fa-cloud"></i> ${translations[lang].cloud}`;
+    backendLis[3].innerHTML = `<i class="fas fa-cogs"></i> ${translations[lang].rest}`;
+    backendLis[4].innerHTML = `<i class="fas fa-project-diagram"></i> ${translations[lang].architecture}`;
+    backendLis[5].innerHTML = `<i class="fas fa-dharmachakra"></i> ${translations[lang].devops}`;
+    backendLis[6].innerHTML = `<i class="fas fa-cube"></i> ${translations[lang].oop}`;
+    backendLis[7].innerHTML = `<i class="fas fa-check-double"></i> ${translations[lang].cleanCode}`;
+
+    const frontendLis = document.querySelectorAll('#habilidades .habilidade:nth-child(2) ul li');
+    frontendLis[0].innerHTML = `<i class="fab fa-html5"></i> ${translations[lang].html}`;
+    frontendLis[1].innerHTML = `<i class="fas fa-paint-brush"></i> ${translations[lang].fonts}`;
+
+    const toolsLis = document.querySelectorAll('#habilidades .habilidade:nth-child(3) ul li');
+    toolsLis[0].innerHTML = `<i class="fab fa-linux"></i> Linux`;
+    toolsLis[1].innerHTML = `<i class="fab fa-git"></i> ${translations[lang].git}`;
+    toolsLis[2].innerHTML = `<i class="fas fa-vials"></i> ${translations[lang].postman}`;
+    toolsLis[3].innerHTML = `<i class="fas fa-code"></i> ${translations[lang].vscode}`;
 
     // Navegação
-    document.querySelectorAll('nav a')[0].textContent = translations[lang].about;
-    document.querySelectorAll('nav a')[1].textContent = translations[lang].skills;
-    document.querySelectorAll('nav a')[2].textContent = translations[lang].projects;
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks[0].textContent = translations[lang].about;
+    navLinks[1].textContent = translations[lang].skills;
+    navLinks[2].textContent = translations[lang].projects;
 }
+
 
 // Toggle idioma
 document.getElementById("language-toggle").addEventListener("change", function() {
